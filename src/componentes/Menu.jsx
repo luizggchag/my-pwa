@@ -15,8 +15,8 @@ const Menu = () => (
                             Manutenções
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="/predios">Predios</a></li>
-                            <li><a className="dropdown-item" href="/salas">Salas</a></li>
+                            {/* <li><a className="dropdown-item" href="/predios">Predios</a></li>
+                            <li><a className="dropdown-item" href="/salas">Salas</a></li> */}
                             <li><a className="dropdown-item" href="/tarefas">Tarefas</a></li>
                             <li><a className="dropdown-item" href="/disciplinas">Disciplinas</a></li>
                         </ul>

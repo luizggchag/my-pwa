@@ -9,6 +9,11 @@ function Disciplinas() {
         localStorage.getItem('SALASPWA/listadisciplinas') 
         ? JSON.parse(localStorage.getItem('SALASPWA/listadisciplinas')) : []
     ); 
+
+    const [listaTarefas, setListaTarefas] = useState(
+        localStorage.getItem('SALASPWA/listatarefas')
+            ? JSON.parse(localStorage.getItem('SALASPWA/listatarefas')) : []
+    );
     
     const [alerta, setAlerta] = useState({status : "" , message : ""});
 
@@ -58,9 +63,15 @@ function Disciplinas() {
 
     const acaoRemover = objeto => {
         if (window.confirm("Remover este objeto?")) {
-            const listaObjetosTemp = listaObjetos.filter(p => p.id !== objeto.id);
-            setListaObjetos(listaObjetosTemp);      
-            setAlerta({status:"success", message: "Objeto removido com sucesso!"})  ;               
+            const aux = listaTarefas.filter(t => Number(t.disciplina) === Number(objeto.id));            
+            
+            if (aux.length > 0) {
+                setAlerta({ status: "error", message: "Objeto possui tarefas!" });
+            } else {
+                const listaObjetosTemp = listaObjetos.filter(p => p.id !== objeto.id);
+                setListaObjetos(listaObjetosTemp);
+                setAlerta({ status: "success", message: "Objeto removido com sucesso!" });
+            }
         }
     }
 
