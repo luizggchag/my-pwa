@@ -10,9 +10,6 @@ const Menu = () => (
                     <li className="nav-item">
                         <a className="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="/login">Login/Logout</a>
-                    </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Manutenções
@@ -21,6 +18,9 @@ const Menu = () => (
                             <li><a className="dropdown-item" href="/tarefas">Tarefas</a></li>
                             <li><a className="dropdown-item" href="/disciplinas">Disciplinas</a></li>
                         </ul>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link active" aria-current="page" href="/login">Logout</a>
                     </li>
                 </ul>
             </div>

@@ -32,31 +32,31 @@ const Home = () => {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                        {tarefasDaDisciplina.length === 0 && <h2>Nenhum registro encontrado</h2>}
-                        {tarefasDaDisciplina.length > 0 && (
+                            {tarefasDaDisciplina.length === 0 && <h2>Nenhum registro encontrado</h2>}
+                            {tarefasDaDisciplina.length > 0 && (
 
-                            <div className="table-responsive">
-                                <table className="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Título</th>
-                                            <th scope="col">Descrição</th>
-                                            <th scope="col">Observação</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {tarefasDaDisciplina.map(objeto => (
+                                <div className="table-responsive">
+                                    <table className="table">
+                                        <thead>
                                             <tr>
-                                                <td>{objeto.id}</td>
-                                                <td>{objeto.titulo}</td>
-                                                <td>{objeto.descricao}</td>
-                                                <td>{objeto.observacao}</td>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Título</th>
+                                                <th scope="col">Descrição</th>
+                                                <th scope="col">Observação</th>
                                             </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
+                                        </thead>
+                                        <tbody>
+                                            {tarefasDaDisciplina.map(objeto => (
+                                                <tr>
+                                                    <td>{objeto.id}</td>
+                                                    <td>{objeto.titulo}</td>
+                                                    <td>{objeto.descricao}</td>
+                                                    <td>{objeto.observacao}</td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             )}
                         </div>
                         <div className="modal-footer">
@@ -66,6 +66,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            {listaDisciplinas.length === 0 && <h2>Nenhum registro encontrado</h2>}
             <div className="container">
                 <div className="row">
                     {listaDisciplinas.map(objeto => (
@@ -75,7 +76,7 @@ const Home = () => {
                                 <h5 className="card-title">{objeto.nome}</h5>
                                 <p className="card-text">
                                     {objeto.professor}
-                                    <br/>
+                                    <br />
                                     Prédio {objeto.predio}
                                 </p>
                                 <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTarefas"

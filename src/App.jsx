@@ -10,9 +10,11 @@ import Tarefas from './componentes/tarefas/Tarefas'
 import Disciplinas from './componentes/disciplinas/Disciplinas'
 
 function App() {
+  const isAuth = !!localStorage.getItem("MYPWA/usuario");
+
   return (
     <Router>
-        <Menu/>
+        {isAuth && <Menu/>}
         <Routes>
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/login" element={<Login/>}/>
