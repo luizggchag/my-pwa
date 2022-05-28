@@ -23,14 +23,14 @@ const Home = () => {
     return (
         <div style={{ padding: '20px' }}>
             <h1>Salas de aula e Prédios - PWA</h1>
-            <div className="modal fade" id="modalSalas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="modalSalas" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="exampleModalLabel">Salas do prédio</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div claclassNamess="modal-body">
+                        <div className="modal-body">
                         {salasDoPredio.length === 0 && <h2>Nenhum registro encontrado</h2>}
                         {salasDoPredio.length > 0 && (
                             <div className="table-responsive">

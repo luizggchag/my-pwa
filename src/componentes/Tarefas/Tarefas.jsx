@@ -10,9 +10,14 @@ function Tarefas() {
             ? JSON.parse(localStorage.getItem('SALASPWA/listatarefas')) : []
     );
 
+    const [listaDisciplinas, setListaDisciplinas] = useState(
+        localStorage.getItem('SALASPWA/listadisciplinas') 
+        ? JSON.parse(localStorage.getItem('SALASPWA/listadisciplinas')) : []
+    );     
+
     const [alerta, setAlerta] = useState({ status: "", message: "" });
 
-    const [objeto, setObjeto] = useState({ id: "", titulo: "", descricao: "", observacao: "" });
+    const [objeto, setObjeto] = useState({ id: "", titulo: "", descricao: "", observacao: "", disciplina: "" });
 
     const [editar, setEditar] = useState(false);
 
@@ -71,7 +76,7 @@ function Tarefas() {
                 alerta, setAlerta,
                 objeto, setObjeto,
                 editar, setEditar,
-                acaoCadastrar, handleChange
+                acaoCadastrar, handleChange, listaDisciplinas
             }}>
             <Tabela />
             <Formulario />

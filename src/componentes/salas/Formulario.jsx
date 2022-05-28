@@ -76,7 +76,7 @@ function Formulario() {
                                     value={objeto.predio}
                                     name="predio"
                                     onChange={handleChange}>
-                                    <option disabled="true" value="">(Selecione o prédio)</option>
+                                    <option disabled={true} value="">(Selecione o prédio)</option>
                                     {
                                         listaPredios.map((predio) => (
                                             <option key={predio.id} value={predio.id}>

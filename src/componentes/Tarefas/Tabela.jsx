@@ -4,7 +4,12 @@ import TarefasContext from './TarefasContext';
 
 const Tabela = () => {
     const { listaObjetos, acaoRemover, alerta,
-        setObjeto, setEditar, setAlerta } = useContext(TarefasContext);
+        setObjeto, setEditar, setAlerta, listaDisciplinas } = useContext(TarefasContext);
+
+    const siglaDisciplina = id => {
+        let objeto = listaDisciplinas.find(p => p.id === Number(id));
+        return objeto.sigla;
+    }
 
     return (
         <div style={{ padding: '20px' }}>
@@ -12,7 +17,7 @@ const Tabela = () => {
             <Alerta alerta={alerta} />
             <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEdicao"
                 onClick={() => {
-                    setObjeto({ id: 0, titulo: "", descricao: "", validade: "" });
+                    setObjeto({ id: 0, titulo: "", descricao: "", observacao: "", disciplina: "" });
                     setEditar(false);
                     setAlerta({ status: "", message: "" });
                 }}>
@@ -29,6 +34,7 @@ const Tabela = () => {
                                 <th scope="col">Título</th>
                                 <th scope="col">Descrição</th>
                                 <th scope="col">Observação</th>
+                                <th scope="col">Disciplina</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,6 +58,7 @@ const Tabela = () => {
                                     <td>{objeto.titulo}</td>
                                     <td>{objeto.descricao}</td>
                                     <td>{objeto.observacao}</td>
+                                    <td>{siglaDisciplina(objeto.disciplina)} </td>
                                 </tr>
                             ))}
                         </tbody>

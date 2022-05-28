@@ -3,7 +3,7 @@ import Alerta from "../Alerta";
 import TarefasContext from "./TarefasContext";
 
 function Formulario() {
-    const { objeto, handleChange, acaoCadastrar, alerta } = useContext(TarefasContext);
+    const { objeto, handleChange, acaoCadastrar, alerta, listaDisciplinas } = useContext(TarefasContext);
 
     return (
         <div className="modal fade" id="modalEdicao" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -64,6 +64,28 @@ function Formulario() {
                                     onChange={handleChange}
                                 />
                             </div>
+
+                            <div className="form-group">
+                                <label htmlFor="selectDisciplina" className="form-label">
+                                    Disciplina
+                                </label>
+                                <select required
+                                    className="form-control"
+                                    id="selectDisciplina"
+                                    value={objeto.disciplina}
+                                    name="disciplina"
+                                    onChange={handleChange}>
+                                    <option disabled={true} value="">(Selecione a disciplina)</option>
+                                    {
+                                        listaDisciplinas.map((obj) => (
+                                            <option key={obj.id} value={obj.id}>
+                                                {obj.sigla}
+                                            </option>
+                                        ))
+                                    }
+                                </select>
+                            </div>
+                            
                         </div>
 
                         <div className="modal-footer">
