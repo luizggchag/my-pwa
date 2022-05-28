@@ -6,13 +6,13 @@ import DisciplinasContext from './DisciplinasContext';
 function Disciplinas() {
 
     const [listaObjetos, setListaObjetos] = useState(
-        localStorage.getItem('SALASPWA/listadisciplinas') 
-        ? JSON.parse(localStorage.getItem('SALASPWA/listadisciplinas')) : []
+        localStorage.getItem('MYPWA/listadisciplinas') 
+        ? JSON.parse(localStorage.getItem('MYPWA/listadisciplinas')) : []
     ); 
 
     const [listaTarefas, setListaTarefas] = useState(
-        localStorage.getItem('SALASPWA/listatarefas')
-            ? JSON.parse(localStorage.getItem('SALASPWA/listatarefas')) : []
+        localStorage.getItem('MYPWA/listatarefas')
+            ? JSON.parse(localStorage.getItem('MYPWA/listatarefas')) : []
     );
     
     const [alerta, setAlerta] = useState({status : "" , message : ""});
@@ -36,14 +36,14 @@ function Disciplinas() {
             setAlerta({status:"success", message: "Objeto editado com sucesso!"});
         } else {
             if (objeto.id === 0){
-                var idatual = localStorage.getItem('SALASPWA/iddisciplina');
+                var idatual = localStorage.getItem('MYPWA/iddisciplina');
                 if (idatual === null){
                     idatual = 0;
                 }         
 
                 var novoId = Number(idatual) + 1;
                 objeto.id = novoId;
-                localStorage.setItem('SALASPWA/iddisciplina', novoId);
+                localStorage.setItem('MYPWA/iddisciplina', novoId);
 
                 setListaObjetos([...listaObjetos,objeto]);
                 setAlerta({status:"success", message: "Objeto adicionado com sucesso!"});
@@ -52,7 +52,7 @@ function Disciplinas() {
     };
 
     useEffect( () => {
-        localStorage.setItem('SALASPWA/listadisciplinas', JSON.stringify(listaObjetos));
+        localStorage.setItem('MYPWA/listadisciplinas', JSON.stringify(listaObjetos));
     }, [listaObjetos]);
 
     const handleChange = (e) => {

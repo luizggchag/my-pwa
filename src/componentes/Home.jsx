@@ -3,13 +3,13 @@ import { useState } from 'react';
 const Home = () => {
 
     const [listaDisciplinas, setListaDisciplinas] = useState(
-        localStorage.getItem('SALASPWA/listadisciplinas')
-            ? JSON.parse(localStorage.getItem('SALASPWA/listadisciplinas')) : []
+        localStorage.getItem('MYPWA/listadisciplinas')
+            ? JSON.parse(localStorage.getItem('MYPWA/listadisciplinas')) : []
     );
 
     const [listaTarefas, setListaTarefas] = useState(
-        localStorage.getItem('SALASPWA/listatarefas')
-            ? JSON.parse(localStorage.getItem('SALASPWA/listatarefas')) : []
+        localStorage.getItem('MYPWA/listatarefas')
+            ? JSON.parse(localStorage.getItem('MYPWA/listatarefas')) : []
     );
 
     const [tarefasDaDisciplina, setTarefasDaDisciplina] = useState([]);

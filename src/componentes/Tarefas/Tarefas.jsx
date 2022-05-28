@@ -6,13 +6,13 @@ import TarefasContext from './TarefasContext';
 function Tarefas() {
 
     const [listaObjetos, setListaObjetos] = useState(
-        localStorage.getItem('SALASPWA/listatarefas')
-            ? JSON.parse(localStorage.getItem('SALASPWA/listatarefas')) : []
+        localStorage.getItem('MYPWA/listatarefas')
+            ? JSON.parse(localStorage.getItem('MYPWA/listatarefas')) : []
     );
 
     const [listaDisciplinas, setListaDisciplinas] = useState(
-        localStorage.getItem('SALASPWA/listadisciplinas') 
-        ? JSON.parse(localStorage.getItem('SALASPWA/listadisciplinas')) : []
+        localStorage.getItem('MYPWA/listadisciplinas') 
+        ? JSON.parse(localStorage.getItem('MYPWA/listadisciplinas')) : []
     );     
 
     const [alerta, setAlerta] = useState({ status: "", message: "" });
@@ -36,14 +36,14 @@ function Tarefas() {
             setAlerta({ status: "success", message: "Objeto editado com sucesso!" });
         } else {
             if (objeto.id === 0) {
-                var idatual = localStorage.getItem('SALASPWA/idtarefa');
+                var idatual = localStorage.getItem('MYPWA/idtarefa');
                 if (idatual === null) {
                     idatual = 0;
                 }
 
                 var novoId = Number(idatual) + 1;
                 objeto.id = novoId;
-                localStorage.setItem('SALASPWA/idtarefa', novoId);
+                localStorage.setItem('MYPWA/idtarefa', novoId);
 
                 setListaObjetos([...listaObjetos, objeto]);
                 setAlerta({ status: "success", message: "Objeto adicionado com sucesso!" });
@@ -52,7 +52,7 @@ function Tarefas() {
     };
 
     useEffect(() => {
-        localStorage.setItem('SALASPWA/listatarefas', JSON.stringify(listaObjetos));
+        localStorage.setItem('MYPWA/listatarefas', JSON.stringify(listaObjetos));
     }, [listaObjetos]);
 
     const handleChange = (e) => {

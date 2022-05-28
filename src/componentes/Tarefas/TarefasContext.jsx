@@ -1,5 +1,5 @@
 import React from 'react';
 
-const PrediosContext = React.createContext();
+const TarefasContext = React.createContext();
  
-export default PrediosContext;
+export default TarefasContext;
