@@ -6,15 +6,13 @@ const Tabela = () => {
     const { listaObjetos, acaoRemover, alerta,
         setObjeto, setEditar, setAlerta } = useContext(TarefasContext);
 
-    return (<div> Tabela </div>);
-    /*
     return (
         <div style={{ padding: '20px' }}>
             <h1>Tarefas</h1>
             <Alerta alerta={alerta} />
             <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEdicao"
                 onClick={() => {
-                    setObjeto({ id: 0, nome: "", descricao: "", sigla: "" });
+                    setObjeto({ id: 0, titulo: "", descricao: "", validade: "" });
                     setEditar(false);
                     setAlerta({ status: "", message: "" });
                 }}>
@@ -28,9 +26,9 @@ const Tabela = () => {
                             <tr>
                                 <th scope="col" style={{ textAlign: 'center' }}>Ações</th>
                                 <th scope="col" width="17%">ID</th>
-                                <th scope="col">Nome</th>
+                                <th scope="col">Título</th>
                                 <th scope="col">Descrição</th>
-                                <th scope="col">Sigla</th>
+                                <th scope="col">Observação</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,9 +49,9 @@ const Tabela = () => {
                                         </button>
                                     </td>
                                     <td>{objeto.id}</td>
-                                    <td>{objeto.nome}</td>
+                                    <td>{objeto.titulo}</td>
                                     <td>{objeto.descricao}</td>
-                                    <td>{objeto.sigla}</td>
+                                    <td>{objeto.observacao}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -62,8 +60,6 @@ const Tabela = () => {
             )}
         </div>
     );
-    */
-
 }
 
 export default Tabela;
