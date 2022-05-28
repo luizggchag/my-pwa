@@ -21,7 +21,7 @@ const Login = () => {
                         <input onChange={e => setUsuario(e.target.value)} value={usuario} />
                         <br />
                         <div>Senha</div>
-                        <input onChange={e => setUsuario(e.target.value)} value={senha} />
+                        <input onChange={e => setSenha(e.target.value)} value={senha} />
                         <br />
                         <div style={{ padding: '4px' }}> </div>
                         <div >
