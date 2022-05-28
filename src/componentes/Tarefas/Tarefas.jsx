@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Tabela from './Tabela';
 import Formulario from './Formulario';
 import TarefasContext from './TarefasContext';
+import withAuth from '../withAuth';
 
 function Tarefas() {
 
@@ -83,5 +84,4 @@ function Tarefas() {
         </TarefasContext.Provider>
     );
 }
-
-export default Tarefas;
+export default withAuth(Tarefas);

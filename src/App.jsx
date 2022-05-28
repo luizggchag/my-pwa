@@ -5,6 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import Menu from './componentes/Menu'
 import {BrowserRouter as Router, Routes , Route } from 'react-router-dom'
 import Home from './componentes/Home'
+import Login from './componentes/Login'
 import Tarefas from './componentes/tarefas/Tarefas'
 import Disciplinas from './componentes/disciplinas/Disciplinas'
 
@@ -14,6 +15,7 @@ function App() {
         <Menu/>
         <Routes>
           <Route exact path="/" element={<Home/>}/>
+          <Route exact path="/login" element={<Login/>}/>
           <Route exact path="/tarefas" element={<Tarefas/>}/> 
           <Route exact path="/disciplinas" element={<Disciplinas/>}/> 
         </Routes>

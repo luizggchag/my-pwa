@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Tabela from './Tabela';
 import Formulario from './Formulario';
 import DisciplinasContext from './DisciplinasContext';
+import withAuth from '../withAuth';
 
 function Disciplinas() {
 
@@ -90,4 +91,4 @@ function Disciplinas() {
     );
 }
 
-export default Disciplinas;
+export default withAuth(Disciplinas);

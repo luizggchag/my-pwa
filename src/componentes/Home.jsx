@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import withAuth from './withAuth';
 
 const Home = () => {
 
@@ -91,4 +92,4 @@ const Home = () => {
     )
 };
 
-export default Home;
+export default withAuth(Home);
