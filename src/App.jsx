@@ -6,6 +6,7 @@ import Menu from './componentes/Menu'
 import Home from './componentes/Home'
 import Predios from './componentes/predios/Predios'
 import Salas from './componentes/salas/Salas'
+import Tarefas from './componentes/Tarefas/Tarefas'
 import {BrowserRouter as Router, Routes , Route } from 'react-router-dom'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/predios" element={<Predios/>}/> 
           <Route exact path="/salas" element={<Salas/>}/> 
+          <Route exact path="/tarefas" element={<Tarefas/>}/> 
         </Routes>
     </Router>
   );
