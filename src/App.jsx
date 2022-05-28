@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Routes , Route } from 'react-router-dom'
 import Home from './componentes/Home'
 import Predios from './componentes/predios/Predios'
 import Salas from './componentes/salas/Salas'
-import Tarefas from './componentes/Tarefas/Tarefas'
+import Tarefas from './componentes/tarefas/Tarefas'
 import Disciplinas from './componentes/disciplinas/Disciplinas'
 
 function App() {

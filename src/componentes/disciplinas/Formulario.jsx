@@ -1,17 +1,16 @@
 import { useContext } from "react";
 import Alerta from "../Alerta";
-import SalasContext from "./SalasContext";
+import DisciplinasContext from "./DisciplinasContext";
 
 function Formulario() {
-
-    const { objeto, handleChange, acaoCadastrar, alerta, listaPredios } = useContext(SalasContext);
+    const { objeto, handleChange, acaoCadastrar, alerta } = useContext(DisciplinasContext);
 
     return (
         <div className="modal fade" id="modalEdicao" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title" id="exampleModalLabel">Edição de Salas</h5>
+                        <h5 className="modal-title" id="exampleModalLabel">Edição de Disciplinas</h5>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form id="formulario" onSubmit={acaoCadastrar}>
@@ -31,60 +30,51 @@ function Formulario() {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="txtNumero" className="form-label">
-                                    Numero
-                                </label>
-                                <input type="number"
-                                    className="form-control"
-                                    id="txtNumero"
-                                    name="numero"
-                                    value={objeto.numero}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="txtDescricao" className="form-label">
-                                    Descrição
+                                <label htmlFor="txtNome" className="form-label">
+                                    Nome
                                 </label>
                                 <input type="text"
                                     className="form-control"
-                                    id="txtDescricao"
-                                    name="descricao"
-                                    value={objeto.descricao}
+                                    id="txtNome"
+                                    name="nome"
+                                    value={objeto.nome}
                                     onChange={handleChange}
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="txtCapacidade" className="form-label">
-                                    Capacidade
+                                <label htmlFor="txtSigla" className="form-label">
+                                    Sigla
                                 </label>
-                                <input type="number"
+                                <input type="text"
                                     className="form-control"
-                                    id="txtCapacidade"
-                                    name="capacidade"
-                                    value={objeto.capacidade}
+                                    id="txtSigla"
+                                    name="sigla"
+                                    value={objeto.sigla}
+                                    onChange={handleChange} />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="txtProfessor" className="form-label">
+                                    Professor
+                                </label>
+                                <input type="text"
+                                    className="form-control"
+                                    id="txtProfessor"
+                                    name="professor"
+                                    value={objeto.professor}
                                     onChange={handleChange}
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="selectPredio" className="form-label">
+                                <label htmlFor="txtPredio" className="form-label">
                                     Prédio
                                 </label>
-                                <select required
+                                <input type="text"
                                     className="form-control"
-                                    id="selectPredio"
-                                    value={objeto.predio}
+                                    id="txtPredio"
                                     name="predio"
-                                    onChange={handleChange}>
-                                    <option disabled="true" value="">(Selecione o prédio)</option>
-                                    {
-                                        listaPredios.map((predio) => (
-                                            <option key={predio.id} value={predio.id}>
-                                                {predio.nome}
-                                            </option>
-                                        ))
-                                    }
-                                </select>
+                                    value={objeto.predio}
+                                    onChange={handleChange}
+                                />
                             </div>
                         </div>
 

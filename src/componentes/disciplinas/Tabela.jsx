@@ -1,24 +1,18 @@
 import { useContext } from 'react'
 import Alerta from '../Alerta';
-import SalasContext from './DisciplinasContext';
+import DisciplinasContext from './DisciplinasContext';
 
 const Tabela = () => {
-
     const { listaObjetos, acaoRemover, alerta,
-        setObjeto, setEditar, setAlerta, listaPredios } = useContext(SalasContext);
-
-    const nomePredio = id => {
-        let objeto = listaPredios.find(p => p.id === Number(id));
-        return objeto.nome;
-    }
+        setObjeto, setEditar, setAlerta } = useContext(DisciplinasContext);
 
     return (
         <div style={{ padding: '20px' }}>
-            <h1>Salas</h1>
+            <h1>Disciplinas</h1>
             <Alerta alerta={alerta} />
             <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEdicao"
                 onClick={() => {
-                    setObjeto({ id: 0, numero: "", descricao: "", capacidade: "", predio: "" });
+                    setObjeto({id: 0, nome: "", sigla: "", professor: "", predio: "" });
                     setEditar(false);
                     setAlerta({ status: "", message: "" });
                 }}>
@@ -32,9 +26,9 @@ const Tabela = () => {
                             <tr>
                                 <th scope="col" style={{ textAlign: 'center' }}>Ações</th>
                                 <th scope="col" width="17%">ID</th>
-                                <th scope="col">Numero</th>
-                                <th scope="col">Descrição</th>
-                                <th scope="col">Capacidade</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Sigla</th>
+                                <th scope="col">Professor</th>
                                 <th scope="col">Prédio</th>
                             </tr>
                         </thead>
@@ -56,10 +50,10 @@ const Tabela = () => {
                                         </button>
                                     </td>
                                     <td>{objeto.id}</td>
-                                    <td>{objeto.numero}</td>
-                                    <td>{objeto.descricao}</td>
-                                    <td>{objeto.capacidade}</td>
-                                    <td>{nomePredio(objeto.predio)} </td>
+                                    <td>{objeto.nome}</td>
+                                    <td>{objeto.sigla}</td>
+                                    <td>{objeto.professor}</td>
+                                    <td>{objeto.predio}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -68,7 +62,6 @@ const Tabela = () => {
             )}
         </div>
     );
-
 }
 
 export default Tabela;
