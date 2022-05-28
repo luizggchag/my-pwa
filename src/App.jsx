@@ -16,8 +16,8 @@ function App() {
         <Menu/>
         <Routes>
           <Route exact path="/" element={<Home/>}/>
-          {/* <Route exact path="/predios" element={<Predios/>}/> 
-          <Route exact path="/salas" element={<Salas/>}/>  */}
+          <Route exact path="/predios" element={<Predios/>}/> 
+          <Route exact path="/salas" element={<Salas/>}/> 
           <Route exact path="/tarefas" element={<Tarefas/>}/> 
           <Route exact path="/disciplinas" element={<Disciplinas/>}/> 
         </Routes>
